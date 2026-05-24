@@ -1,0 +1,46 @@
+:root{
+  --bg:#ffffff;
+  --text:#0c2340;
+}
+
+body.dark{
+  --bg:#081120;
+  --text:#ffffff;
+}
+
+body{
+  background:var(--bg);
+  color:var(--text);
+  transition:0.3s;
+}
+#themeToggle{
+
+  border:none;
+  background:linear-gradient(135deg,#0284c7,#38bdf8);
+
+  color:white;
+
+  width:42px;
+  height:42px;
+
+  border-radius:50%;
+
+  cursor:pointer;
+
+  font-size:18px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  transition:0.3s;
+
+  box-shadow:0 4px 12px rgba(2,132,199,0.3);
+
+}
+
+#themeToggle:hover{
+
+  transform:scale(1.08);
+
+}

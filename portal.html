@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Portal — DIET</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+
+
+
+</head>
+<link rel="stylesheet" href="css/portal.css">
+<link rel="stylesheet" href="css/themes.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="js/portal.js"></script>
+<script src="js/charts.js"></script>
+<script src="js/theme.js"></script>
+
+<body>
+
+<!-- LOGIN SCREEN -->
+
+<div id="login-screen">
+
+  <div class="login-wrap">
+
+    <div class="login-left">
+
+      <div class="login-logo">
+        <div class="login-logo-box">D</div>
+
+        <div>
+          <strong>DIET</strong>
+          <div>Student Portal</div>
+        </div>
+      </div>
+
+      <div class="login-hero-text">
+        <h2>Welcome Back, Scholar</h2>
+
+        <p>
+          Your academic dashboard — attendance,
+          results, notices and more in one place.
+        </p>
+      </div>
+
+      <div class="login-stats">
+
+        <div class="login-stat">
+          <div class="login-stat-num">5K+</div>
+          <div class="login-stat-lbl">Students</div>
+        </div>
+
+        <div class="login-stat">
+          <div class="login-stat-num">150+</div>
+          <div class="login-stat-lbl">Faculty</div>
+        </div>
+
+        <div class="login-stat">
+          <div class="login-stat-num">24/7</div>
+          <div class="login-stat-lbl">Access</div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- LOGIN RIGHT -->
+
+    <div class="login-right">
+
+      <h3>Sign In to Your Portal</h3>
+
+      <p class="sub">
+        Use your student ID and password issued by DIET administration.
+      </p>
+
+      <div class="form-group">
+        <label>Roll Number</label>
+
+        <input
+          type="text"
+          id="student-id"
+          placeholder="e.g 23352-CM-000"
+        />
+      </div>
+
+      <div class="form-group">
+        <label>Password</label>
+
+        <input
+          type="password"
+          id="password"
+          placeholder="Enter your password"
+        />
+      </div>
+
+      <div class="form-group">
+        <label>Department</label>
+
+        <select id="dept-select">
+          <option value="">Select your department</option>
+          <option value="CSE">Computer Science & Engineering</option>
+          <option value="ECE">Electronics & Communication</option>
+          <option value="EEE">Electrical & Electronics</option>
+          <option value="MECH">Mechanical Engineering</option>
+          <option value="CIVIL">Civil Engineering</option>
+          <option value="MBA">MBA</option>
+        </select>
+      </div>
+
+      <div class="login-actions">
+        <button class="login-btn" onclick="doLogin()">
+          Sign In to Portal →
+        </button>
+        <button class="register-btn" onclick="doRegister()" type="button">
+          Register Account
+        </button>
+      </div>
+
+      <p class="login-footer-note">
+        Forgot password?
+        <a href="#">Contact admin</a>
+      </p>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- PORTAL SCREEN -->
+
+<div id="portal-screen">
+
+  <div class="portal-layout">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+      <div class="sidebar-logo">
+
+        <div class="login-logo">
+
+          <div class="sidebar-logo-box">D</div>
+
+          <div>
+            <strong>DIET Portal</strong>
+
+            <div style="font-size:12px;color:var(--muted)">
+              Academic Dashboard
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="sidebar-section-label">Main</div>
+
+      <div class="nav-item active">🏠 Dashboard</div>
+      <div class="nav-item">📊 Attendance</div>
+      <div class="nav-item">📘 Results</div>
+      <div class="nav-item">💳 Fee Portal</div>
+      <div class="nav-item">📚 Library</div>
+      <div class="nav-item">📢 Notices</div>
+
+      <div class="sidebar-bottom">
+
+        <div class="user-chip">
+
+          <div class="user-avatar" id="sidebar-avatar">R</div>
+
+          <div>
+            <div id="sidebar-name">Ravi</div>
+
+            <div
+              id="sidebar-id"
+              style="font-size:12px;color:var(--muted)"
+            >
+              22B91A0501
+            </div>
+          </div>
+
+          <button class="logout-btn" onclick="doLogout()">
+            ⏻
+          </button>
+
+        </div>
+
+      </div>
+
+    </aside>
+
+    <!-- MAIN -->
+
+    <main class="portal-main">
+
+      <div class="topbar">
+
+        <div>
+          <h1>
+            Good Morning,
+            <span id="portal-name">Ravi</span>
+          </h1>
+
+          <p id="portal-date">
+            Semester 6
+          </p>
+        </div>
+
+      </div>
+
+      <!-- STATS -->
+
+      <div class="stats-row">
+
+        <div class="stat-card">
+          <div class="stat-card-value">8.7</div>
+          <div>Current CGPA</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-card-value">84%</div>
+          <div>Attendance</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-card-value">3</div>
+          <div>Upcoming Exams</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-card-value">₹0</div>
+          <div>Fee Due</div>
+        </div>
+
+      </div>
+
+      <div class="dashboard-grid">
+
+        <div class="bottom-row">
+
+          <!-- NOTICES -->
+
+          <div class="panel">
+
+            <div class="panel-header">
+              <div class="panel-title">Notices</div>
+            </div>
+
+            <div class="notice-list">
+
+              <div class="notice-item">
+                <div class="notice-title">
+                  Mid-Term Exams Schedule
+                </div>
+
+                <div class="notice-meta">
+                  Starts May 12
+                </div>
+              </div>
+
+              <div class="notice-item">
+                <div class="notice-title">
+                  TechFest 2025
+                </div>
+
+                <div class="notice-meta">
+                  Registrations Open
+                </div>
+              </div>
+
+              <div class="notice-item">
+                <div class="notice-title">
+                  Placement Drive
+                </div>
+
+                <div class="notice-meta">
+                  Infosys Campus Recruitment
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- RESULTS -->
+
+          <div class="panel">
+
+            <div class="panel-header">
+              <div class="panel-title">Semester Results</div>
+            </div>
+
+            <div class="results-grid">
+
+              <div class="result-card">
+                <div>Data Structures</div>
+                <div class="result-grade grade-s">S</div>
+              </div>
+
+              <div class="result-card">
+                <div>Operating Systems</div>
+                <div class="result-grade grade-a">A</div>
+              </div>
+
+              <div class="result-card">
+                <div>Algorithms</div>
+                <div class="result-grade grade-s">S</div>
+              </div>
+
+              <div class="result-card">
+                <div>Microprocessors</div>
+                <div class="result-grade grade-b">B</div>
+              </div>
+
+            </div>
+
+          </div>
+          <div class="panel">
+
+  <div class="panel-header">
+    <div class="panel-title">
+      Attendance Analytics
+    </div>
+  </div>
+
+  <canvas id="attendanceChart"></canvas>
+
+</div>
+
+          <!-- FEES -->
+
+          <div style="display:flex;flex-direction:column;gap:16px;">
+
+            <div class="panel">
+
+              <div class="panel-header">
+                <div class="panel-title">Fee Status</div>
+              </div>
+
+              <div class="fee-status">
+                <strong>₹100,550 Paid Successfully</strong>
+              </div>
+
+              <div class="fee-row">
+                <span>Tuition Fee</span>
+                <span>₹25,000</span>
+              </div>
+
+              <div class="fee-row">
+                <span>Hostel Fee</span>
+                <span>₹75,000</span>
+              </div>
+
+              <div class="fee-row">
+                <span>Exam Fee</span>
+                <span>₹550</span>
+              </div>
+
+            </div>
+
+            <!-- QUICK LINKS -->
+
+            <div class="panel">
+
+              <div class="panel-header">
+                <div class="panel-title">Quick Links</div>
+              </div>
+
+              <div class="quick-grid">
+
+                <div class="quick-btn">
+                  📄 Downloads
+                </div>
+
+                <div class="quick-btn">
+                  📝 Assignments
+                </div>
+
+                <div class="quick-btn">
+                  📅 Timetable
+                </div>
+
+                <div class="quick-btn">
+                  📨 Messages
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </main>
+
+  </div>
+
+</div>
+
+<!-- SCRIPT -->
+
+
+
+</body>
+</html>

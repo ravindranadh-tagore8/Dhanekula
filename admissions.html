@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admissions 2026–27 — DIET</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+
+</head>
+<link rel="stylesheet" href="css/admissions.css">
+<link rel="stylesheet" href="css/themes.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<script src="js/admissions.js"></script>
+<script src="js/theme.js"></script>
+<body>
+
+<nav>
+  <a href="#" class="nav-brand">
+    <div class="nav-brand-box">D</div>
+
+    <div class="nav-brand-text">
+      <strong>DIET</strong>
+      <span>Dhanekula Institute</span>
+    </div>
+  </a>
+
+  <a href="#" class="nav-back">← Back to Website</a>
+</nav>
+
+<div class="hero-strip" id="hero-strip">
+  <div>
+    <h1>Admissions 2026–27</h1>
+    <p>Apply online for B.Tech, M.Tech & MBA programs.</p>
+  </div>
+
+  <div class="hero-deadline">
+    <div class="dl-label">Application Deadline</div>
+    <div class="dl-date">July 31, 2026</div>
+  </div>
+</div>
+
+<div class="progress-bar-wrap" id="progress-bar-wrap">
+
+  <div class="steps-row">
+
+    <div class="step-node active" id="node-1">
+      <div class="step-circle">
+        <span class="step-num">1</span>
+      </div>
+      <div class="step-label">Personal</div>
+    </div>
+
+    <div class="step-node" id="node-2">
+      <div class="step-circle">
+        <span class="step-num">2</span>
+      </div>
+      <div class="step-label">Academic</div>
+    </div>
+
+    <div class="step-node" id="node-3">
+      <div class="step-circle">
+        <span class="step-num">3</span>
+      </div>
+      <div class="step-label">Program</div>
+    </div>
+
+    <div class="step-node" id="node-4">
+      <div class="step-circle">
+        <span class="step-num">4</span>
+      </div>
+      <div class="step-label">Documents</div>
+    </div>
+
+    <div class="step-node" id="node-5">
+      <div class="step-circle">
+        <span class="step-num">5</span>
+      </div>
+      <div class="step-label">Submit</div>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="main-wrap" id="main-wrap">
+
+  <div class="form-card">
+
+    <form id="admissionForm">
+
+      <!-- STEP 1 -->
+      <div class="form-section active" id="step-1">
+
+        <div class="form-section-title">
+          👤 Personal Information
+        </div>
+
+        <p class="form-section-sub">
+          Fill your personal details carefully.
+        </p>
+
+        <div class="form-grid">
+
+          <div class="form-col">
+            <label for="fname">
+              First Name <span class="required">*</span>
+            </label>
+
+            <input type="text" id="fname"/>
+
+            <span class="error-msg" id="fname-err">
+              Required
+            </span>
+          </div>
+
+          <div class="form-col">
+            <label for="lname">
+              Last Name <span class="required">*</span>
+            </label>
+
+            <input type="text" id="lname"/>
+
+            <span class="error-msg" id="lname-err">
+              Required
+            </span>
+          </div>
+
+          <div class="form-col">
+            <label for="dob">
+              DOB <span class="required">*</span>
+            </label>
+
+            <input type="date" id="dob"/>
+
+            <span class="error-msg" id="dob-err">
+              Required
+            </span>
+          </div>
+
+          <div class="form-col">
+            <label for="gender">
+              Gender <span class="required">*</span>
+            </label>
+
+            <select id="gender">
+              <option value="">Select</option>
+              <option>Male</option>
+              <option>Female</option>
+            </select>
+
+            <span class="error-msg" id="gender-err">
+              Required
+            </span>
+          </div>
+
+          <div class="form-col">
+            <label for="mobile">
+              Mobile <span class="required">*</span>
+            </label>
+
+            <input type="tel" maxlength="10" id="mobile"/>
+
+            <span class="error-msg" id="mobile-err">
+              Invalid mobile number
+            </span>
+          </div>
+
+          <div class="form-col">
+            <label for="email">
+              Email <span class="required">*</span>
+            </label>
+
+            <input type="email" id="email"/>
+
+            <span class="error-msg" id="email-err">
+              Invalid email
+            </span>
+          </div>
+
+          <div class="form-col span2">
+            <label for="address">
+              Address <span class="required">*</span>
+            </label>
+
+            <textarea id="address"></textarea>
+
+            <span class="error-msg" id="address-err">
+              Required
+            </span>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- STEP 2 -->
+      <div class="form-section" id="step-2">
+
+        <div class="form-section-title">
+          🎓 Academic Details
+        </div>
+
+        <p class="form-section-sub">
+          Enter your qualification details.
+        </p>
+
+        <div class="form-grid">
+
+          <div class="form-col">
+            <label for="school10">
+              Class 10 School
+            </label>
+
+            <input type="text" id="school10"/>
+          </div>
+
+          <div class="form-col">
+            <label for="pct12">
+              Intermediate %
+            </label>
+
+            <input type="number" id="pct12"/>
+          </div>
+
+          <div class="form-col">
+            <label for="entrance">
+              Entrance Exam
+            </label>
+
+            <select id="entrance">
+              <option value="">Select</option>
+              <option>AP EAPCET</option>
+              <option>ECET</option>
+              <option>JEE</option>
+            </select>
+          </div>
+
+          <div class="form-col">
+            <label for="rank">
+              Rank
+            </label>
+
+            <input type="text" id="rank"/>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- STEP 3 -->
+      <div class="form-section" id="step-3">
+
+        <div class="form-section-title">
+          💻 Program Choice
+        </div>
+
+        <div class="form-grid">
+
+          <div class="form-col span2">
+
+            <label>
+              Program Type <span class="required">*</span>
+            </label>
+
+            <div class="radio-group">
+
+              <label class="radio-option">
+                <input type="radio" name="progtype" value="B.Tech"/>
+                B.Tech
+              </label>
+
+              <label class="radio-option">
+                <input type="radio" name="progtype" value="M.Tech"/>
+                M.Tech
+              </label>
+
+              <label class="radio-option">
+                <input type="radio" name="progtype" value="MBA"/>
+                MBA
+              </label>
+
+            </div>
+
+          </div>
+
+          <div class="form-col">
+            <label for="branch1">
+              Branch <span class="required">*</span>
+            </label>
+
+            <select id="branch1">
+              <option value="">Select Branch</option>
+              <option>CSE</option>
+              <option>AI & ML</option>
+              <option>Data Science</option>
+              <option>ECE</option>
+              <option>EEE</option>
+            </select>
+
+            <span class="error-msg" id="branch1-err">
+              Required
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- STEP 4 -->
+      <div class="form-section" id="step-4">
+
+        <div class="form-section-title">
+          📄 Upload Documents
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:18px;">
+
+          <div class="upload-box">
+            <label for="photo">
+              Passport Photo
+            </label>
+
+            <input type="file" id="photo" accept=".jpg,.jpeg,.png"/>
+          </div>
+
+          <div class="upload-box">
+            <label for="memo10">
+              Class 10 Memo
+            </label>
+
+            <input type="file" id="memo10" accept=".pdf,.jpg,.jpeg,.png"/>
+          </div>
+
+          <div class="upload-box">
+            <label for="memo12">
+              Intermediate Memo
+            </label>
+
+            <input type="file" id="memo12" accept=".pdf,.jpg,.jpeg,.png"/>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- STEP 5 -->
+      <div class="form-section" id="step-5">
+
+        <div class="form-section-title">
+          ✅ Review & Submit
+        </div>
+
+        <div id="review-summary"
+        style="
+        background:#f8fbff;
+        border:1px solid var(--border);
+        border-radius:12px;
+        padding:20px;
+        margin-bottom:24px;
+        ">
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:14px;">
+
+          <label class="checkbox-row">
+            <input type="checkbox" id="decl1"/>
+            I confirm all information is correct.
+          </label>
+
+          <label class="checkbox-row">
+            <input type="checkbox" id="decl2"/>
+            I agree to the rules and regulations.
+          </label>
+
+        </div>
+
+      </div>
+
+    </form>
+
+    <div class="form-nav">
+
+      <button class="btn-prev"
+      id="btn-prev"
+      onclick="changeStep(-1)"
+      style="visibility:hidden">
+        ← Previous
+      </button>
+
+      <span id="step-counter">
+        Step 1 of 5
+      </span>
+
+      <button class="btn-next"
+      id="btn-next"
+      onclick="changeStep(1)">
+        Next →
+      </button>
+
+    </div>
+
+  </div>
+
+  <aside>
+
+    <div class="sidebar-card">
+
+      <div class="sc-header">
+        <h3>Admissions Helpdesk</h3>
+        <p>Mon–Sat, 9AM–5PM</p>
+      </div>
+
+      <div class="sc-body">
+
+        <div class="info-row">
+          <div class="info-title">Phone</div>
+          <div class="info-val">+91-866-2470000</div>
+        </div>
+
+        <div class="info-row">
+          <div class="info-title">Email</div>
+          <div class="info-val">admissions@diet.ac.in</div>
+        </div>
+
+        <div class="info-row">
+          <div class="info-title">Address</div>
+          <div class="info-val">
+            Ganguru, Vijayawada, AP
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </aside>
+
+</div>
+
+<div id="success-screen">
+
+  <h2>
+    🎉 Application Submitted!
+  </h2>
+
+  <p>
+    Your application has been submitted successfully.
+  </p>
+
+  <div class="app-id-box">
+
+    <div class="app-id-label">
+      Application ID
+    </div>
+
+    <div class="app-id-num" id="app-id-display">
+      DIET-2026-00000
+    </div>
+
+  </div>
+
+  <div class="success-btns">
+
+    <a href="#" class="sbtn-primary">
+      Student Portal →
+    </a>
+
+    <a href="#" class="sbtn-ghost">
+      Back to Home
+    </a>
+<button onclick="downloadPDF()"
+class="sbtn-primary">
+
+  Download PDF
+
+</button>
+  </div>
+
+</div>
+
+
+
+</body>
+</html>
